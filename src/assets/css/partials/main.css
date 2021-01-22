@@ -1,0 +1,5 @@
+.main {
+  flex: .7;
+  background: var(--lightBlue);
+  min-height: 92vh;
+}

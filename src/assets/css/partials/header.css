@@ -1,0 +1,19 @@
+.header {
+  background: var(--blue);
+  color: var(--gray);
+  min-height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2em;
+}
+.btn-toggle {
+  border: none;
+  background: none;
+  opacity: .85;
+  cursor: pointer;
+  transition: opacity .2 ease-in-out;
+}
+.btn-toggle:hover {
+  opacity: 1;
+}

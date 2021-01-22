@@ -1,5 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+@import './partials/header.css';
+@import './partials/sidebar.css';
+@import './partials/main.css';
+
+:root {
+  --lightBlue: #62a4ab;
+  --blue: #2F4368;
+  --yellow: #FAF76B;
+  --brown: #87501F;
+  --pink: #F7C49D;
+  --gray: #EAEAEA;
+}
+html {
+  font-family: 'Creepster', cursive;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+
