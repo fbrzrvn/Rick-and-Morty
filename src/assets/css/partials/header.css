@@ -6,14 +6,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 2em;
+  position: sticky;
+  top: 0;
+  width: 100%;
 }
-.btn-toggle {
-  border: none;
-  background: none;
-  opacity: .85;
-  cursor: pointer;
-  transition: opacity .2 ease-in-out;
-}
-.btn-toggle:hover {
-  opacity: 1;
+
+@media screen and (max-width: 600px) {
+  .header {
+    padding: 0 .75em;
+  }
 }
