@@ -13,7 +13,7 @@ export const sidebarLink = data => {
   const fragment = $(document.createDocumentFragment());
   data.forEach(element => {
     const item = $('<li class="sidebar-item"></li>');
-    const link = $(`<a href="${element.url}" class="sidebar-link"></a>`);
+    const link = $(`<a class="sidebar-link" id="${element.url}"></a>`);
     link.text(`Episode: ${element.id}`);
     item.append(link)
     $(fragment).append(item);

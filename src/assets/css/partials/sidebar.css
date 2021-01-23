@@ -1,5 +1,5 @@
 .sidebar {
-  flex: .25;
+  flex: .2;
   display: flex;
   flex-direction: column;
   padding: 0 2em;
@@ -18,9 +18,6 @@
   cursor: pointer;
   transition: color .2 ease-in-out;
 }
-.sidebar-link:visited {
-  color: var(--pink);
-}
 .sidebar-link:hover,
 .sidebar-link:visited:hover {
   color: var(--lightBlue);
@@ -32,6 +29,7 @@
   border-radius: 4px;
   padding: 1em 1.5em;
   margin: 1em 0;
+  margin-right: .75em;
   max-width: max-content;
   font-family: inherit;
   white-space: nowrap;
@@ -49,8 +47,9 @@
 
 @media screen and (max-width: 600px) {
   .sidebar {
-    padding: 0 .75em;
     flex: .3;
+    padding: 0;
+    padding-left: .75em;
   }
   .sidebar-btn {
     padding: .5em .75em;

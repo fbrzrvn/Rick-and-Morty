@@ -1,4 +1,4 @@
-import { getEpisodes, getUrl } from '../model/api';
+import { getUrl } from '../model/api';
 import { sidebarLink } from '../view/components/sidebar';
 import { mainContainer } from '../view/components/main';
 
@@ -7,17 +7,11 @@ export const render = (fragment, element="#root") => {
   $(element).append(fragment);
 }
 
-export const renderEpisodes = () => {
-  getEpisodes().then(response => {
-    render(sidebarLink(response.data.results), '[data-episodes-list]');
-  })
-}
-
 export const loadEpisodes = () => {
+  const url = "https://rickandmortyapi.com/api/episode";
   let page = 1;
   $('#load-episodes').on('click', () => {
-    getUrl(`https://rickandmortyapi.com/api/episode?page=${page}`)
-    .then(response => {
+    getUrl(`${url}?page=${page}`).then(response => {
       render(sidebarLink(response.data.results), '[data-episodes-list]');
       page++;
       if (page > response.data.info.pages) {
