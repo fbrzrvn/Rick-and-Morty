@@ -1,6 +1,6 @@
 import { getUrl } from '../model/api';
 import { sidebarLink } from '../view/components/sidebar';
-import { mainContainer } from '../view/components/main';
+import { characterCard, mainContainer } from '../view/components/main';
 
 
 export const render = (fragment, element="#root") => {
@@ -27,6 +27,13 @@ export const showEpisode = () => {
       const url = e.target.id;
       getUrl(url).then(response => {
         render(mainContainer(response.data), '.main');
+
+        response.data.characters.forEach(character => {
+          getUrl(character).then(response => {
+            console.log(response.data);
+            render(characterCard(response.data), '.char-container');
+          })
+        })
       })
     }
   })
