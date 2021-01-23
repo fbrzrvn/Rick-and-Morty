@@ -3,7 +3,7 @@ export const sidebar = () => {
     `
       <aside class="sidebar">
         <ul class="sidebar-list" data-episodes-list></ul>
-        <button class="sidebar-btn">load episodes</button>
+        <button class="sidebar-btn" id="load-episodes">load episodes</button>
       </aside>
     `;
   return template;
