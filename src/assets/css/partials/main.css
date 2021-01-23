@@ -1,5 +1,33 @@
 .main {
-  flex: .7;
+  flex: .75;
   background: var(--lightBlue);
   min-height: 92vh;
+}
+.episode-container {
+  padding: 2em;
+}
+.episode-header {
+  margin-bottom: 2em;
+  color: var(--brown);
+}
+.episode-name {
+  font-size: 2.5rem;
+}
+.episode-details {
+  font-size: 24px;
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    flex: .7;
+  }
+  .episode-container {
+    padding: .75em;
+  }
+  .episode-name {
+    font-size: 1.8rem;
+  }
+  .episode-details {
+    font-size: 18px;
+  }
 }
