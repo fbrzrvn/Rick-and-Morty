@@ -42,6 +42,10 @@
   background: var(--blue);
   color: var(--gray);
 }
+.sidebar-btn:disabled {
+  cursor: not-allowed;
+  opacity: .5;
+}
 
 @media screen and (max-width: 600px) {
   .sidebar {

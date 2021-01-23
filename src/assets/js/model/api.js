@@ -4,6 +4,6 @@ export const getEpisodes = () => {
   return axios.get('https://rickandmortyapi.com/api/episode');
 }
 
-export const getEpisode = id => {
-  return axios.get(`https://rickandmortyapi.com/api/episode/${id}`);
+export const getUrl = url => {
+  return axios.get(url);
 }
