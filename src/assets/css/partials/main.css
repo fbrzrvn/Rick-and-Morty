@@ -3,7 +3,8 @@
   background: var(--lightBlue);
   min-height: 92vh;
 }
-.episode-container {
+.episode-container,
+.char-wrapper {
   padding: 2em;
 }
 .episode-header {
@@ -12,19 +13,20 @@
 .episode-name {
   font-size: 2.5rem;
   color: var(--yellow);
+  text-shadow: 1px 0 3px var(--blue);
 }
 .episode-details {
   font-size: 24px;
   color: var(--blue);
+  text-shadow: 1px 0 3px var(--gray);
 }
 .char-container {
   display: flex;
   flex-wrap: wrap;
 }
 .char-card {
-  flex: 1 1 25%;
+  flex: 1 1 250px;
   margin-bottom: 20px;
-  cursor: pointer;
 }
 .char-card:hover {
   transform: scale(1.05);
@@ -33,23 +35,48 @@
 .char-img {
   margin-bottom: 5px;
 }
-.char-img img {
+.char-img img,
+.char-left img {
   width: 250px;
 }
 .char-name {
   font-size: 1.5rem;
   color: var(--yellow);
+  text-shadow: 1px 0 3px var(--blue);
+  cursor: pointer;
+}
+.char-name:hover {
+  text-decoration: underline;
+
 }
 .char-details {
   font-size: 18px;
   color: var(--blue);
+  text-shadow: 1px 0 3px var(--gray);
 }
+
+.char-hero {
+  display: flex;
+  padding-bottom: 2em;
+  border-bottom: 1px solid var(--gray);
+}
+.char-left {
+  margin-right: 1em;
+}
+.char-right {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
 
 @media screen and (max-width: 600px) {
   .main {
     flex: .7;
   }
-  .episode-container {
+  .episode-container,
+  .char-wrapper {
     padding: .75em;
   }
   .episode-name {
@@ -62,10 +89,20 @@
     flex-flow: column nowrap;
     align-items: center;
   }
+  .char-hero {
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 478px) {
-  .char-img img {
+  .char-card {
+    flex: 1 1 150px;
+  }
+  .char-hero {
+    align-items: center;
+  }
+  .char-img img,
+  .char-left img {
     width: 150px;
   }
 }

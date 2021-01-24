@@ -27,12 +27,31 @@ export const characterCard = character => {
   const charHero = $('<div class="char-img"></div>');
   const charImg = $(`<img src="${character.image}" alt="${character.name}">`);
   const charBody = $('<div class="char-body"></div>');
-  const charName = $('<h3 class="char-name"></h3>').text(character.name);
+  const charName = $(`<h3 class="char-name" id="${character.url}"></h3>`).text(character.name);
   const charDetails = $('<p class="char-details"></p>');
   charDetails.text(`${character.species} | ${character.status}`);
   charHero.append(charImg);
   charBody.append(charName, charDetails);
   charCard.append(charHero, charBody);
   $(fragment).append(charCard);
+  return fragment;
+}
+
+export const characterView = character => {
+  $('main').empty();
+  const fragment = $(document.createDocumentFragment());
+  const charContainer = $('<div class="char-wrapper"></div');
+  const charHero = $('<div class="char-hero">');
+  const charLeft = $('<div class="char-left">');
+  const charImg = $(`<img src="${character.image}" alt="${character.name}">`);
+  const charRigth = $('<div class="char-right"></div>');
+  const charName = $(`<h3 class="char-name" id="${character.url}"></h3>`).text(character.name);
+  const charDetails = $('<p class="char-details"></p>');
+  charDetails.text(`${character.species} | ${character.status} | ${character.gender} | ${character.origin.name}`);
+  charLeft.append(charImg);
+  charRigth.append(charName, charDetails);
+  charHero.append(charLeft, charRigth);
+  charContainer.append(charHero);
+  $(fragment).append(charContainer);
   return fragment;
 }

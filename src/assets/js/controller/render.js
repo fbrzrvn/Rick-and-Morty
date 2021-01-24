@@ -1,6 +1,6 @@
 import { getUrl } from '../model/api';
 import { sidebarLink } from '../view/components/sidebar';
-import { characterCard, mainContainer } from '../view/components/main';
+import { characterCard, characterView, mainContainer } from '../view/components/main';
 
 
 export const render = (fragment, element="#root") => {
@@ -30,10 +30,20 @@ export const showEpisode = () => {
 
         response.data.characters.forEach(character => {
           getUrl(character).then(response => {
-            console.log(response.data);
             render(characterCard(response.data), '.char-container');
           })
         })
+      })
+    }
+  })
+}
+
+export const showCharacter = () => {
+  $('.main').on('click', e => {
+    if (e.target.tagName.toLocaleLowerCase() === 'h3') {
+      const url = e.target.id;
+      getUrl(url).then(response => {
+        render(characterView(response.data), '.main');
       })
     }
   })
