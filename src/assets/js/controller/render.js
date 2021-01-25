@@ -71,7 +71,7 @@ export const showLocation = () => {
   $('.main').on('click', e => {
     if (e.target.tagName.toLowerCase() === 'button') {
       const url = e.target.id;
-      // if (!url) return;
+      if (!url) return;
       getUrl(url).then(response => {
         render(locationView(response.data), '.main');
 

@@ -11,10 +11,10 @@ export const main = () => {
 export const mainContainer = episode => {
   $('main').empty();
   const fragment = $(document.createDocumentFragment());
-  const episodeContainer = $('<div class="episode-container"></div>');
-  const episodeHeader = $(`<div class="episode-header"></div>`);
-  const episodeName = $('<h2 class="episode-name"></h2>').text(episode.name);
-  const episodeDetails = $('<p class="episode-details"></p>');
+  const episodeContainer = $('<div class="container"></div>');
+  const episodeHeader = $(`<div class="container-header"></div>`);
+  const episodeName = $('<h2 class="name-big"></h2>').text(episode.name);
+  const episodeDetails = $('<p class="details-big"></p>');
   episodeDetails.text(`${episode.air_date} | ${episode.episode}`);
   const charContainer = $('<div class="char-container"></div>');
   episodeHeader.append(episodeName, episodeDetails);
@@ -27,10 +27,10 @@ export const characterCard = character => {
   const fragment = $(document.createDocumentFragment());
   const charCard = $('<div class="char-card"></div');
   const charHero = $('<div class="char-img"></div>');
-  const charImg = $(`<img src="${character.image}" alt="${character.name}">`);
+  const charImg = $(`<img class="image" src="${character.image}" alt="${character.name}">`);
   const charBody = $('<div class="char-body"></div>');
-  const charName = $(`<h3 class="char-name" id="${character.url}"></h3>`).text(character.name);
-  const charDetails = $('<p class="char-details"></p>');
+  const charName = $(`<h3 class="name-small" id="${character.url}"></h3>`).text(character.name);
+  const charDetails = $('<p class="details-small"></p>');
   charDetails.text(`${character.species} | ${character.status}`);
   charHero.append(charImg);
   charBody.append(charName, charDetails);
@@ -42,15 +42,15 @@ export const characterCard = character => {
 export const characterView = character => {
   $('main').empty();
   const fragment = $(document.createDocumentFragment());
-  const charContainer = $('<div class="char-wrapper"></div');
+  const charContainer = $('<div class="container"></div');
   const charHero = $('<div class="char-hero">');
   const charLeft = $('<div class="char-left">');
-  const charImg = $(`<img src="${character.image}" alt="${character.name}">`);
+  const charImg = $(`<img class="image" src="${character.image}" alt="${character.name}">`);
   const charRigth = $('<div class="char-right"></div>');
-  const charName = $(`<h3 class="char-name" id="${character.url}"></h3>`).text(character.name);
-  const charDetails = $('<p class="char-details"></p>');
-  charDetails.text(`${character.species} | ${character.status} | ${character.gender} | ${character.location.name}`);
-  const locationBtn = $(`<button class="location-btn" id="${character.location.url}"></button>`);
+  const charName = $(`<h3 class="name-big" id="${character.url}"></h3>`).text(character.name);
+  const charDetails = $('<p class="details-big"></p>');
+  charDetails.text(`${character.species} | ${character.status} | ${character.gender} | ${character.origin.name}`);
+  const locationBtn = $(`<button class="btn" id="${character.location.url}"></button>`);
   locationBtn.text('view location');
   const charEpisodes = $('<div class="char-episodes"></div>');
   charLeft.append(charImg);
@@ -64,9 +64,9 @@ export const characterView = character => {
 export const characterEpisode = episode => {
   const fragment = $(document.createDocumentFragment());
   const charEpisode = $('<div class="char-episode"></div>');
-  const episodeTitle = $(`<h4 class="char-name" id="${episode.url}"></h4>`);
+  const episodeTitle = $(`<h4 class="name-small" id="${episode.url}"></h4>`);
   episodeTitle.text(`Episode: ${episode.id}`);
-  const episodeDetails = $('<p class="char-details"></p>');
+  const episodeDetails = $('<p class="details-small"></p>');
   episodeDetails.text(episode.episode);
   charEpisode.append(episodeTitle, episodeDetails);
   $(fragment).append(charEpisode);
@@ -76,10 +76,10 @@ export const characterEpisode = episode => {
 export const locationView = location => {
   $('.main').empty();
   const fragment = $(document.createDocumentFragment());
-  const locationContainer = $('<div class="location-container"></div>');
-  const locationHeader = $('<div class="location-header"></div>');
-  const locationName = $('<h2 class="location-name"></h2>').text(location.name);
-  const locationDetails = $('<p class="location-details"></p>');
+  const locationContainer = $('<div class="container"></div>');
+  const locationHeader = $('<div class="container-header"></div>');
+  const locationName = $('<h2 class="name-big"></h2>').text(location.name);
+  const locationDetails = $('<p class="details-big"></p>');
   locationDetails.text(`${location.type} | ${location.dimension}`);
   const locationResidents = $('<div class="char-container"></div>');
   locationHeader.append(locationName, locationDetails);

@@ -22,5 +22,25 @@ html {
 .wrapper {
   display: flex;
 }
-
-
+.btn {
+  background: transparent;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 4px;
+  padding: 1em 1.5em;
+  margin: 1em 0;
+  margin-right: .75em;
+  max-width: max-content;
+  font-family: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all .3 ease;
+}
+.btn:hover {
+  background: var(--blue);
+  color: var(--gray);
+}
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: .5;
+}
