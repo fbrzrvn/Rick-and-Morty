@@ -49,10 +49,12 @@ export const characterView = character => {
   const charRigth = $('<div class="char-right"></div>');
   const charName = $(`<h3 class="char-name" id="${character.url}"></h3>`).text(character.name);
   const charDetails = $('<p class="char-details"></p>');
+  charDetails.text(`${character.species} | ${character.status} | ${character.gender} | ${character.location.name}`);
+  const locationBtn = $(`<button class="location-btn" id="${character.location.url}"></button>`);
+  locationBtn.text('view location');
   const charEpisodes = $('<div class="char-episodes"></div>');
-  charDetails.text(`${character.species} | ${character.status} | ${character.gender} | ${character.origin.name}`);
   charLeft.append(charImg);
-  charRigth.append(charName, charDetails);
+  charRigth.append(charName, charDetails, locationBtn);
   charHero.append(charLeft, charRigth);
   charContainer.append(charHero, charEpisodes);
   $(fragment).append(charContainer);
@@ -70,3 +72,18 @@ export const characterEpisode = episode => {
   $(fragment).append(charEpisode);
   return fragment;
 };
+
+export const locationView = location => {
+  $('.main').empty();
+  const fragment = $(document.createDocumentFragment());
+  const locationContainer = $('<div class="location-container"></div>');
+  const locationHeader = $('<div class="location-header"></div>');
+  const locationName = $('<h2 class="location-name"></h2>').text(location.name);
+  const locationDetails = $('<p class="location-details"></p>');
+  locationDetails.text(`${location.type} | ${location.dimension}`);
+  const locationResidents = $('<div class="char-container"></div>');
+  locationHeader.append(locationName, locationDetails);
+  locationContainer.append(locationHeader, locationResidents);
+  $(fragment).append(locationContainer);
+  return fragment;
+}

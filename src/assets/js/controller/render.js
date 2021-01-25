@@ -1,6 +1,6 @@
 import { getUrl } from '../model/api';
 import { sidebarLink } from '../view/components/sidebar';
-import { characterCard, characterEpisode, characterView, mainContainer } from '../view/components/main';
+import { characterCard, characterEpisode, characterView, locationView, mainContainer } from '../view/components/main';
 
 
 export const render = (fragment, element="#root") => {
@@ -62,6 +62,24 @@ export const showCharacter = () => {
             render(characterCard(response.data), '.char-container');
           })
         })
+      })
+    }
+  })
+}
+
+export const showLocation = () => {
+  $('.main').on('click', e => {
+    if (e.target.tagName.toLowerCase() === 'button') {
+      const url = e.target.id;
+      // if (!url) return;
+      getUrl(url).then(response => {
+        render(locationView(response.data), '.main');
+
+        response.data.residents.forEach(resident => {
+          getUrl(resident).then(response => {
+            render(characterCard(response.data), '.char-container');
+          })
+        });
       })
     }
   })

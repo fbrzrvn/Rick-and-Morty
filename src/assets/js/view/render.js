@@ -1,4 +1,4 @@
-import { render, loadEpisodes, showEpisode, showCharacter } from '../controller/render';
+import { render, loadEpisodes, showEpisode, showCharacter, showLocation } from '../controller/render';
 import { header } from './components/header';
 import { wrapper } from './components/wrapper';
 import { sidebar } from './components/sidebar';
@@ -13,4 +13,5 @@ export const app = () => {
   render(main, $('#wrap'));
   showEpisode();
   showCharacter();
+  showLocation();
 }
