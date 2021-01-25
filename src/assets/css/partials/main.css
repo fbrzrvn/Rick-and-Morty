@@ -2,6 +2,15 @@
   flex: .8;
   background: var(--lightBlue);
   min-height: 92vh;
+  position: relative;
+}
+.main-gif {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 92vh;
 }
 .episode-container,
 .char-wrapper {
@@ -68,7 +77,15 @@
   display: flex;
   flex-direction: column;
 }
-
+.char-episodes {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2em 0;
+}
+.char-episode {
+  flex: 1 1 25%;
+  margin: 0 .25em;
+}
 
 
 @media screen and (max-width: 600px) {

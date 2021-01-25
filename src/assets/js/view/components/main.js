@@ -1,7 +1,9 @@
 export const main = () => {
   const template =
     `
-      <main class="main"></main>
+      <main class="main">
+        <img src="https://i.pinimg.com/originals/70/cd/a4/70cda40d6679e21eb760dd3e35a26e7c.gif" alt="bg" class="main-gif">
+      </main>
     `
   return template;
 }
@@ -47,11 +49,24 @@ export const characterView = character => {
   const charRigth = $('<div class="char-right"></div>');
   const charName = $(`<h3 class="char-name" id="${character.url}"></h3>`).text(character.name);
   const charDetails = $('<p class="char-details"></p>');
+  const charEpisodes = $('<div class="char-episodes"></div>');
   charDetails.text(`${character.species} | ${character.status} | ${character.gender} | ${character.origin.name}`);
   charLeft.append(charImg);
   charRigth.append(charName, charDetails);
   charHero.append(charLeft, charRigth);
-  charContainer.append(charHero);
+  charContainer.append(charHero, charEpisodes);
   $(fragment).append(charContainer);
   return fragment;
 }
+
+export const characterEpisode = episode => {
+  const fragment = $(document.createDocumentFragment());
+  const charEpisode = $('<div class="char-episode"></div>');
+  const episodeTitle = $(`<h4 class="char-name" id="${episode.url}"></h4>`);
+  episodeTitle.text(`Episode: ${episode.id}`);
+  const episodeDetails = $('<p class="char-details"></p>');
+  episodeDetails.text(episode.episode);
+  charEpisode.append(episodeTitle, episodeDetails);
+  $(fragment).append(charEpisode);
+  return fragment;
+};

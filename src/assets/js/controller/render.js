@@ -1,6 +1,6 @@
 import { getUrl } from '../model/api';
 import { sidebarLink } from '../view/components/sidebar';
-import { characterCard, characterView, mainContainer } from '../view/components/main';
+import { characterCard, characterEpisode, characterView, mainContainer } from '../view/components/main';
 
 
 export const render = (fragment, element="#root") => {
@@ -44,6 +44,24 @@ export const showCharacter = () => {
       const url = e.target.id;
       getUrl(url).then(response => {
         render(characterView(response.data), '.main');
+
+        response.data.episode.forEach(episode => {
+          getUrl(episode).then(response => {
+            render(characterEpisode(response.data), '.char-episodes');
+          })
+        })
+      })
+
+    } else if (e.target.tagName.toLowerCase() === 'h4') {
+      const url = e.target.id;
+      getUrl(url).then(response => {
+        render(mainContainer(response.data), '.main');
+
+        response.data.characters.forEach(character => {
+          getUrl(character).then(response => {
+            render(characterCard(response.data), '.char-container');
+          })
+        })
       })
     }
   })
