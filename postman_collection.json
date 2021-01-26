@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "74450121-86e4-4b6b-9cde-fd3158420de3",
+		"name": "Rich-and-Morty",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Initial Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Episode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/episode/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"episode",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Episodes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/episode",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"episode"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "character",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/character/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"character",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "characters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/character",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"character"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Location",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://rickandmortyapi.com/api/location/1",
+					"protocol": "https",
+					"host": [
+						"rickandmortyapi",
+						"com"
+					],
+					"path": [
+						"api",
+						"location",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Locations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://rickandmortyapi.com/api/location",
+					"protocol": "https",
+					"host": [
+						"rickandmortyapi",
+						"com"
+					],
+					"path": [
+						"api",
+						"location"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://rickandmortyapi.com/api"
+		}
+	]
+}
