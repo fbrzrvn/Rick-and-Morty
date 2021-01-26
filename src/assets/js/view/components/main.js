@@ -2,7 +2,7 @@ export const main = () => {
   const template =
     `
       <main class="main">
-        <img src="https://i.pinimg.com/originals/70/cd/a4/70cda40d6679e21eb760dd3e35a26e7c.gif" alt="bg" class="main-gif">
+        <img src="https://media.giphy.com/media/3o72F4A7YVMd4mSJbO/giphy.gif" alt="gif" class="main-gif">
       </main>
     `
   return template;
@@ -50,7 +50,7 @@ export const characterView = character => {
   const charName = $(`<h3 class="name-big" id="${character.url}"></h3>`).text(character.name);
   const charDetails = $('<p class="details-big"></p>');
   charDetails.text(`${character.species} | ${character.status} | ${character.gender} | ${character.origin.name}`);
-  const locationBtn = $(`<button class="btn" id="${character.location.url}"></button>`);
+  const locationBtn = $(`<button class="btn" id="${character.origin.url}"></button>`);
   locationBtn.text('view location');
   const charEpisodes = $('<div class="char-episodes"></div>');
   charLeft.append(charImg);
