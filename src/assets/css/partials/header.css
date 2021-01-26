@@ -11,9 +11,27 @@
   width: 100%;
   z-index: 99;
 }
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+.nav-item {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.nav-item:hover {
+  color: var(--lightBlue);
+  transition: color .2 ease-in-out;
+}
+.nav-item:nth-child(2){
+  margin: 0 10px;
+}
 
 @media screen and (max-width: 600px) {
   .header {
     padding: 0 .75em;
+  }
+  .nav-item {
+    font-size: 14px;
   }
 }

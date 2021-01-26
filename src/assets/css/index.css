@@ -4,12 +4,10 @@
 @import './partials/main.css';
 
 :root {
-  --lightBlue: #62a4ab;
   --blue: #2F4368;
   --yellow: #FAF76B;
-  --brown: #87501F;
-  --pink: #F7C49D;
   --gray: #EAEAEA;
+  --lightBlue: #62a4ab;
 }
 html {
   font-family: 'Creepster', cursive;
@@ -18,6 +16,20 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body {
+  overflow: hidden;
+}
+::-webkit-scrollbar {
+  width: .5em;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--blue);
+  outline: 1px solid var(--gray);
+  border-radius: 4px;
 }
 .wrapper {
   display: flex;

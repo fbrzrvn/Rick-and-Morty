@@ -1,7 +1,9 @@
 .main {
   flex: 8;
   background: var(--lightBlue);
-  min-height: 92vh;
+  height: 92vh;
+  width: fit-content;
+  overflow-y: scroll;
   position: relative;
 }
 .main-gif {
