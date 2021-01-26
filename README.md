@@ -1,5 +1,11 @@
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+
 # Rick-and-Morty
-Website based on the famous television series Rick and Morty consuming a third-party API.
 
 
 <!-- TABLE OF CONTENTS -->
@@ -113,16 +119,9 @@ Contributions are what make the open source community such an amazing place to b
 
 ## Contact
 
-**Fabrizio Ervini** - [@your_twitter](https://twitter.com/faber_dev) - faber.rvn0@gmail.com
+**Fabrizio Ervini** - [@faber_dev](https://twitter.com/faber_dev) - faber.rvn@gmail.com
 
 Project Link: [https://github.com/fab-rvn/Rick-and-Morty.git](https://github.com/fab-rvn/Rick-and-Morty.git)
-
-
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
