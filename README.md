@@ -73,9 +73,9 @@ This section should list any major frameworks that you built your project using.
 
 * [CSS](https://css-tricks.com)
 * [JS](https://javascript.com)
-* [JQuery](https://jquery.com)
-* [webpack](https://webpack.js.org)
-* [axios](https://github.com/axios/axios)
+* [JQUERY](https://jquery.com)
+* [WEBPACK](https://webpack.js.org)
+* [AXIOS](https://github.com/axios/axios)
 
 
 ## Getting Started
