@@ -4,6 +4,7 @@
   flex-direction: column;
   padding: 0 2em;
   height: 92vh;
+  min-width:  -moz-fit-content;
   min-width: fit-content;
   overflow-y: scroll;
   background: var(--gray);
