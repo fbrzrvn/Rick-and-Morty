@@ -30,3 +30,9 @@ type ApiDataType = {
   status: string;
   data: IApiData;
 };
+
+type PageProps = {
+  prevPage: string;
+  nextPage: string;
+  setEndPoint: (page: string) => string;
+};

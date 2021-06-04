@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import Pagination from '../../components/Pagination';
 import useApi from '../../helpers/useApi';
 
 const Locations = () => {
@@ -15,6 +16,11 @@ const Locations = () => {
           <p>{episode.dimension}</p>
         </div>
       ))}
+      <Pagination
+        prevPage={info.prev}
+        nextPage={info.next}
+        setEndPoint={setEndPoint}
+      />
     </div>
   );
 };
