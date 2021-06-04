@@ -1,8 +1,8 @@
 enum Routes {
   HOME = '/',
-  EPISODES = '/episodes',
-  CHARACTERS = '/characters',
-  LOCATIONS = '/locations',
+  EPISODES = '/episode',
+  CHARACTERS = '/character',
+  LOCATIONS = '/location',
 }
 
 export default Routes;
