@@ -1,16 +1,21 @@
 import React from 'react';
 import getEndPoint from '../../helpers/getEndPoint';
+import { PaginationBtn, PaginationWrap } from './styles';
 
 const Pagination = ({ prevPage, nextPage, setEndPoint }: PageProps) => {
   return (
-    <div>
+    <PaginationWrap>
       {prevPage && (
-        <button onClick={() => setEndPoint(getEndPoint(prevPage))}>Prev</button>
+        <PaginationBtn onClick={() => setEndPoint(getEndPoint(prevPage))}>
+          Prev
+        </PaginationBtn>
       )}
       {nextPage && (
-        <button onClick={() => setEndPoint(getEndPoint(nextPage))}>Next</button>
+        <PaginationBtn onClick={() => setEndPoint(getEndPoint(nextPage))}>
+          Next
+        </PaginationBtn>
       )}
-    </div>
+    </PaginationWrap>
   );
 };
 

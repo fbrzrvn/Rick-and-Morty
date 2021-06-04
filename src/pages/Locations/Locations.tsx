@@ -2,26 +2,28 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import Pagination from '../../components/Pagination';
 import useApi from '../../helpers/useApi';
+import { Card, CardH2, CardSmall, Container, Wrapper } from '../../styles';
 
 const Locations = () => {
   const location = useLocation();
   const [info, apiData, setEndPoint] = useApi(location);
 
   return (
-    <div>
-      {apiData.map((episode: IApiData) => (
-        <div key={episode.id}>
-          <h3>{episode.name}</h3>
-          <p>{episode.type}</p>
-          <p>{episode.dimension}</p>
-        </div>
-      ))}
+    <Container>
+      <Wrapper>
+        {apiData.map((location: IApiData) => (
+          <Card key={location.id}>
+            <CardH2>{location.name}</CardH2>
+            <CardSmall>{location.type}</CardSmall>
+          </Card>
+        ))}
+      </Wrapper>
       <Pagination
         prevPage={info.prev}
         nextPage={info.next}
         setEndPoint={setEndPoint}
       />
-    </div>
+    </Container>
   );
 };
 

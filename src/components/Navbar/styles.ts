@@ -35,7 +35,8 @@ export const NavbarLogo = styled('div')`
 export const NavbarLogoLink = styled(Link)`
   color: #eaeaea;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-family: 'Creepster', cursive;
   @media screen and (max-width: 600px) {
     display: none;
   }
@@ -59,7 +60,7 @@ export const NavbarLink = styled(NavLink)`
   display: flex;
   align-items: center;
   padding: 0 1rem;
-  height: calc(100% - 4px);
+  height: 100%;
   cursor: pointer;
   transition: color 200ms ease-in-out;
   &:hover {
