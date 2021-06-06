@@ -2,7 +2,8 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import Pagination from '../../components/Pagination';
 import useApi from '../../helpers/useApi';
-import { Card, CardH2, CardSmall, Container, Wrapper } from '../../styles';
+import Routes from '../../routes';
+import { Card, CardLink, CardSmall, Container, Wrapper } from '../../styles';
 
 const Locations = () => {
   const location = useLocation();
@@ -13,7 +14,9 @@ const Locations = () => {
       <Wrapper>
         {apiData.map((location: IApiData) => (
           <Card key={location.id}>
-            <CardH2>{location.name}</CardH2>
+            <CardLink to={`${Routes.LOCATIONS}/${location.id}`}>
+              {location.name}
+            </CardLink>
             <CardSmall>{location.type}</CardSmall>
           </Card>
         ))}

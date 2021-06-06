@@ -2,7 +2,8 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import Pagination from '../../components/Pagination';
 import useApi from '../../helpers/useApi';
-import { Card, CardH2, CardSmall, Container, Wrapper } from '../../styles';
+import Routes from '../../routes';
+import { Card, CardLink, CardSmall, Container, Wrapper } from '../../styles';
 
 const Episodes = () => {
   const location = useLocation();
@@ -13,7 +14,9 @@ const Episodes = () => {
       <Wrapper>
         {apiData.map((episode: IApiData) => (
           <Card key={episode.id}>
-            <CardH2>{episode.name}</CardH2>
+            <CardLink to={`${Routes.EPISODES}/${episode.id}`}>
+              {episode.name}
+            </CardLink>
             <CardSmall>{episode.air_date}</CardSmall>
           </Card>
         ))}

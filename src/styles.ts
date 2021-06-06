@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 export const Container = styled('div')`
+  min-height: 100%;
   width: 100%;
   max-width: 1100px;
   margin: 32px auto;
@@ -29,11 +31,14 @@ export const CardImg = styled('img')`
   margin-bottom: 16px;
 `;
 
-export const CardH2 = styled('h2')`
+export const CardLink = styled(Link)`
   font-family: 'Creepster', cursive;
   color: #faf76b;
+  font-size: 24px;
   text-shadow: 1px 0 3px #2f4368;
+  text-decoration: none;
   margin-bottom: 8px;
+  display: block;
   cursor: pointer;
   &:hover {
     text-decoration: underline;
