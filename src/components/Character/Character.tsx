@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { fetchAll, fetchApi } from '../../api';
+import getEndPoint from '../../helpers/getEndPoint';
 import {
   CardBody,
+  CardBtn,
   CardDetails,
   CardH2,
   CardHeader,
   CardImg,
   CardP,
   CardWrap,
-  GoBackBtn,
-  StatusAlive,
-  StatusDead,
+  CharStatus,
   Wrapper,
-  WrapperH5,
+  WrapperLink,
 } from './styles';
 
 const Character = () => {
@@ -32,6 +32,11 @@ const Character = () => {
     });
   }, [endPoint]);
 
+  const goToLocation = () => {
+    const endPoint = getEndPoint(data.location?.url);
+    history.push(`/${endPoint}`);
+  };
+
   return (
     <>
       <CardWrap>
@@ -45,20 +50,25 @@ const Character = () => {
               <CardP>{data.gender}</CardP>
               <CardP>|</CardP>
               <CardP>{data.status}</CardP>
-              {data.status === 'Alive' ? <StatusAlive /> : <StatusDead />}
+              <CharStatus alive={data.status} />
             </CardDetails>
             <CardP>{data.location?.name}</CardP>
+            <CardBtn onClick={goToLocation}>View Location</CardBtn>
           </CardBody>
         </CardHeader>
         <CardH2>Episodes:</CardH2>
         <Wrapper>
-          {char.map((el: any) => (
-            <div key={el.data.id}>
-              <WrapperH5>{el.data.name}</WrapperH5>
+          {char.map((episode: any) => (
+            <div key={episode.data.id}>
+              <WrapperLink to={`/${getEndPoint(episode.data.url)}`}>
+                {episode.data.name}
+              </WrapperLink>
             </div>
           ))}
         </Wrapper>
-        <GoBackBtn onClick={() => history.goBack()}>Go Back</GoBackBtn>
+        <CardBtn right onClick={() => history.goBack()}>
+          Go Back
+        </CardBtn>
       </CardWrap>
     </>
   );

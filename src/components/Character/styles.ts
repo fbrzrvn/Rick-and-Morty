@@ -1,6 +1,14 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
+type BtnProps = {
+  right?: boolean;
+};
+
+type StatusProps = {
+  alive: string;
+};
+
 export const CardWrap = styled('div')`
   display: flex;
   flex-direction: column;
@@ -52,22 +60,11 @@ export const CardP = styled('p')`
   margin: 8px;
 `;
 
-export const CardLink = styled(Link)`
-  text-decoration: none;
-`;
-
-export const StatusAlive = styled('div')`
+export const CharStatus = styled.div<StatusProps>`
   height: 10px;
   width: 10px;
   border-radius: 50%;
-  background: green;
-`;
-
-export const StatusDead = styled('div')`
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background: red;
+  background: ${({ alive }) => (alive === 'Alive' ? '#4caf50' : '#f44336')};
 `;
 
 export const Wrapper = styled('div')`
@@ -78,7 +75,7 @@ export const Wrapper = styled('div')`
   margin: 24px;
 `;
 
-export const WrapperH5 = styled('h5')`
+export const WrapperLink = styled(Link)`
   font-family: 'Creepster', cursive;
   color: #faf76b;
   font-size: 18px;
@@ -93,12 +90,12 @@ export const WrapperH5 = styled('h5')`
   }
 `;
 
-export const GoBackBtn = styled('button')`
+export const CardBtn = styled.button<BtnProps>`
   background-color: #fff;
   border: 2px solid #2f4368;
   border-radius: 85% 15% 84% 16% / 10% 79% 21% 90%;
   padding: 0.75em;
-  margin-left: auto;
+  margin: ${({ right }) => (right ? '0 0 0 auto' : '8px')};
   width: 200px;
   font-weight: 700;
   text-transform: uppercase;
