@@ -21,13 +21,13 @@ const Character = () => {
   const history = useHistory();
   const endPoint: string = location.pathname;
   const [data, setData] = useState<any>([]);
-  const [char, setChar] = useState<any>([]);
+  const [episodes, setEpisodes] = useState<any>([]);
 
   useEffect(() => {
     fetchApi(endPoint).then((response: ApiDataType | any) => {
       setData(response.data);
       fetchAll(response.data?.episode).then((response: ApiDataType | any) =>
-        setChar(response)
+        setEpisodes(response)
       );
     });
   }, [endPoint]);
@@ -57,7 +57,7 @@ const Character = () => {
       </CardHeader>
       <CardH2>Episodes:</CardH2>
       <Wrapper>
-        {char.map((episode: any) => (
+        {episodes.map((episode: any) => (
           <div key={episode.data.id}>
             <WrapperLink to={`/${getEndPoint(episode.data.url)}`}>
               {episode.data.name}
