@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { fetchAll, fetchApi } from '../../api';
 import getEndPoint from '../../helpers/getEndPoint';
+import Spinner from '../Spinner';
 import {
   CardBody,
   CardBtn,
@@ -22,13 +23,15 @@ const Character = () => {
   const endPoint: string = location.pathname;
   const [data, setData] = useState<any>([]);
   const [episodes, setEpisodes] = useState<any>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     fetchApi(endPoint).then((response: ApiDataType | any) => {
       setData(response.data);
-      fetchAll(response.data?.episode).then((response: ApiDataType | any) =>
-        setEpisodes(response)
-      );
+      fetchAll(response.data?.episode).then((response: ApiDataType | any) => {
+        setEpisodes(response);
+        setIsLoading(false);
+      });
     });
   }, [endPoint]);
 
@@ -37,7 +40,9 @@ const Character = () => {
     history.push(`/${endPoint}`);
   };
 
-  return (
+  return isLoading ? (
+    <Spinner />
+  ) : (
     <CardWrap>
       <CardHeader>
         <CardImg src={data.image} alt={data.name} />

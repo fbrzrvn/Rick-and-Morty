@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { fetchAll, fetchApi } from '../../api';
 import getEndpoint from '../../helpers/getEndPoint';
+import Spinner from '../Spinner';
 import {
   CardBtn,
   CardDetails,
@@ -21,17 +22,21 @@ const Location = () => {
   const endPoint: string = location.pathname;
   const [data, setData] = useState<any>([]);
   const [residents, setResidents] = useState<any>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     fetchApi(endPoint).then((response: ApiDataType | any) => {
       setData(response.data);
-      fetchAll(response.data?.residents).then((response: ApiDataType | any) =>
-        setResidents(response)
-      );
+      fetchAll(response.data?.residents).then((response: ApiDataType | any) => {
+        setResidents(response);
+        setIsLoading(false);
+      });
     });
   }, [endPoint]);
 
-  return (
+  return isLoading ? (
+    <Spinner />
+  ) : (
     <CardWrap>
       <CardHeader>
         <CardH2>{data.name}</CardH2>

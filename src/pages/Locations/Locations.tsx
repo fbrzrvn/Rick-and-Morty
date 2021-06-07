@@ -1,15 +1,18 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import Pagination from '../../components/Pagination';
+import Spinner from '../../components/Spinner';
 import useApi from '../../helpers/useApi';
 import Routes from '../../routes';
 import { Card, CardLink, CardSmall, Container, Wrapper } from '../../styles';
 
 const Locations = () => {
   const location = useLocation();
-  const [info, apiData, setEndPoint] = useApi(location);
+  const [isLoading, info, apiData, setEndPoint] = useApi(location);
 
-  return (
+  return isLoading ? (
+    <Spinner />
+  ) : (
     <Container>
       <Wrapper>
         {apiData.map((location: IApiData) => (
