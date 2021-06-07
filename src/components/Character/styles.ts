@@ -27,6 +27,9 @@ export const CardHeader = styled('div')`
   padding-bottom: 1em;
   margin-bottom: 24px;
   border-bottom: 2px solid gray;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 export const CardImg = styled('img')`
@@ -35,6 +38,10 @@ export const CardImg = styled('img')`
   border-radius: 60% 40% 40% 20% / 70% 50% 30% 25%;
   box-shadow: 1px 1px 1px black;
   margin-right: 24px;
+  @media screen and (max-width: 600px) {
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
 `;
 
 export const CardBody = styled('div')`
@@ -64,13 +71,14 @@ export const CharStatus = styled.div<StatusProps>`
   height: 10px;
   width: 10px;
   border-radius: 50%;
-  background: ${({ alive }) => (alive === 'Alive' ? '#4caf50' : '#f44336')};
+  background: ${({ alive }) =>
+    alive === 'Alive' ? '#4caf50' : alive === 'Dead' ? '#f44336' : '#ff9800'};
 `;
 
 export const Wrapper = styled('div')`
   display: grid;
-  grid-template-columns: repeat(auto-fit, 250px);
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 150px);
+  justify-content: space-between;
   gap: 16px;
   margin: 24px;
 `;

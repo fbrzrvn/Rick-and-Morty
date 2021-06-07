@@ -38,39 +38,37 @@ const Character = () => {
   };
 
   return (
-    <>
-      <CardWrap>
-        <CardHeader>
-          <CardImg src={data.image} alt={data.name} />
-          <CardBody>
-            <CardH2>{data.name}</CardH2>
-            <CardDetails>
-              <CardP>{data.species}</CardP>
-              <CardP>|</CardP>
-              <CardP>{data.gender}</CardP>
-              <CardP>|</CardP>
-              <CardP>{data.status}</CardP>
-              <CharStatus alive={data.status} />
-            </CardDetails>
-            <CardP>{data.location?.name}</CardP>
-            <CardBtn onClick={goToLocation}>View Location</CardBtn>
-          </CardBody>
-        </CardHeader>
-        <CardH2>Episodes:</CardH2>
-        <Wrapper>
-          {char.map((episode: any) => (
-            <div key={episode.data.id}>
-              <WrapperLink to={`/${getEndPoint(episode.data.url)}`}>
-                {episode.data.name}
-              </WrapperLink>
-            </div>
-          ))}
-        </Wrapper>
-        <CardBtn right onClick={() => history.goBack()}>
-          Go Back
-        </CardBtn>
-      </CardWrap>
-    </>
+    <CardWrap>
+      <CardHeader>
+        <CardImg src={data.image} alt={data.name} />
+        <CardBody>
+          <CardH2>{data.name}</CardH2>
+          <CardDetails>
+            <CardP>{data.species}</CardP>
+            <CardP>|</CardP>
+            <CardP>{data.gender}</CardP>
+            <CardP>|</CardP>
+            <CardP>{data.status}</CardP>
+            <CharStatus alive={data.status} />
+          </CardDetails>
+          <CardP>{data.location?.name}</CardP>
+          <CardBtn onClick={goToLocation}>View Location</CardBtn>
+        </CardBody>
+      </CardHeader>
+      <CardH2>Episodes:</CardH2>
+      <Wrapper>
+        {char.map((episode: any) => (
+          <div key={episode.data.id}>
+            <WrapperLink to={`/${getEndPoint(episode.data.url)}`}>
+              {episode.data.name}
+            </WrapperLink>
+          </div>
+        ))}
+      </Wrapper>
+      <CardBtn right onClick={() => history.goBack()}>
+        Go Back
+      </CardBtn>
+    </CardWrap>
   );
 };
 
