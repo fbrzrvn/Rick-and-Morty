@@ -23,22 +23,22 @@ export const NavbarWrap = styled('div')`
 `;
 
 export const NavbarLogo = styled('div')`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 200px;
-  @media screen and (max-width: 600px) {
-    width: fit-content;
-  }
-`;
-
-export const NavbarLogoLink = styled(Link)`
   color: #eaeaea;
-  text-decoration: none;
   font-size: 1.5rem;
   font-family: 'Creepster', cursive;
   @media screen and (max-width: 600px) {
     display: none;
+  }
+`;
+
+export const NavbarLogoLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  width: 200px;
+  @media screen and (max-width: 600px) {
+    width: fit-content;
   }
 `;
 

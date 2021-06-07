@@ -15,10 +15,10 @@ const Navbar = () => {
   return (
     <Nav>
       <NavbarWrap>
-        <NavbarLogo>
+        <NavbarLogoLink to={Routes.HOME}>
           <Icon />
-          <NavbarLogoLink to={Routes.HOME}>Rick and Morty</NavbarLogoLink>
-        </NavbarLogo>
+          <NavbarLogo>Rick and Morty</NavbarLogo>
+        </NavbarLogoLink>
         <NavbarList>
           <NavbarListItem>
             <NavbarLink to={Routes.EPISODES}>Episodes</NavbarLink>
